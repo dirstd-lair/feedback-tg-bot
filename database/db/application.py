@@ -1,4 +1,3 @@
-from sqlalchemy import select, update
 from ..models import Application
 from utils.logger import get_logger
 from typing import TYPE_CHECKING

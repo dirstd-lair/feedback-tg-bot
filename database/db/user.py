@@ -1,4 +1,4 @@
-from sqlalchemy import select, update
+from sqlalchemy import select
 from ..models import User
 from utils.logger import get_logger
 from typing import TYPE_CHECKING

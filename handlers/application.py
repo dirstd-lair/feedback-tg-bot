@@ -29,7 +29,7 @@ async def input_title_filling_handler(message: Message, state: FSMContext):
             f"Повторите попытку:"
         ), reply_markup=keyboards.keyboard_canceled())
 
-    if not len(message.text.strip()) < 255:
+    if len(message.text.strip()) > 255:
         with suppress(exceptions.TelegramBadRequest):
             return await data.get("msg").edit_text((
                 f"Максимальная длинна причины обращения составляет 255 символов.\n"
