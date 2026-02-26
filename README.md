@@ -1,11 +1,5 @@
 # 🤖 Site Feedback Telegram Bot
 
-<p align="left">
-  <img src="https://img.shields.io">
-  <img src="https://img.shields.io">
-  <img src="https://img.shields.io">
-</p>
-
 Асинхронный Telegram-бот для сбора обратной связи и сообщений об ошибках с сайта. Построен на современном стеке с полной контейнеризацией.
 
 ---
