@@ -25,7 +25,7 @@ async def canceled_to_filling_handler(callback: CallbackQuery, state: FSMContext
       await callback.message.edit_text((
           f"Действие было отменено"
       ))
-    except:
+    except Exception:
         await callback.message.answer((
             f"Действие было отменено"
         ))

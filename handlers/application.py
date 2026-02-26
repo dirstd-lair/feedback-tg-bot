@@ -62,7 +62,7 @@ async def input_description_filling_handler(message: Message, state: FSMContext)
        await state.clear()
        return
 
-    await state.update_data(description=message.html_text)
+    await state.update_data(description=message.text)
     with suppress(exceptions.TelegramBadRequest):
       await data.get("msg").edit_text((
          f"Благодарим за обращение!\n"
