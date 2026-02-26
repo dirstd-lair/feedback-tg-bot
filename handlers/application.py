@@ -35,10 +35,10 @@ async def input_title_filling_handler(message: Message, state: FSMContext):
                 f"Максимальная длинна причины обращения составляет 255 символов.\n"
                 f"Введите заного вашу причину и постарайтесь указать её короче:\n\n"
                 f"Ваша текущая причина:\n"
-                f"<code>{message.html_text}</code>"
+                f"<code>{message.text}</code>"
             ), reply_markup=keyboards.keyboard_canceled())
 
-    await state.update_data(title=message.html_text)
+    await state.update_data(title=message.text)
     await data.get("msg").edit_text(FILLING_MESSAGE_2, reply_markup=keyboards.keyboard_canceled())
     await state.set_state(fsm.AppFillingState.description)
 
@@ -56,6 +56,11 @@ async def input_description_filling_handler(message: Message, state: FSMContext)
     app = await db.application.create_application(data.get("title", "Заголовок не найден"), message.text, message.from_user.id)
     if not app:
        logger.exception(f"Не удалось создать обращение в бд. Data: {app}")
+       await data.get("msg").edit_text((
+          f"Не удалось создать обращение, повторите попытку позже!"
+       ))
+       await state.clear()
+       return
 
     await state.update_data(description=message.html_text)
     with suppress(exceptions.TelegramBadRequest):
