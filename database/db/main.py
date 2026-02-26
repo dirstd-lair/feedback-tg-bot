@@ -22,4 +22,4 @@ class Database:
                 self.logger.info(f"Таблицы успешно созданы. Бот запущен")
             except Exception as ex:
                 self.logger.exception(f"Не удалось создать таблицы {ex}")
-                exit
+                exit()
