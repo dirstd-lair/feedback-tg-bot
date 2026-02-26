@@ -1,6 +1,6 @@
-# 🤖 Site Feedback Telegram Bot
+# 🤖 Feedback Telegram Bot
 
-Асинхронный Telegram-бот для сбора обратной связи и сообщений об ошибках. Построен на Python 3.12, Aiogram 3 и Docker.
+Асинхронный Telegram-бот для сбора обратной связи и сообщений об ошибках. Построен на Python 3.13, Aiogram 3 и Docker.
 
 ---
 
